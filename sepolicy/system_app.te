@@ -1,2 +1,0 @@
-# FPS tile
-allow system_app sysfs:file { getattr };
