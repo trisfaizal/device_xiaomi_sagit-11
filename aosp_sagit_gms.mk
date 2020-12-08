@@ -25,6 +25,7 @@ $(call inherit-product, device/xiaomi/sagit/device.mk)
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # GMS
+TARGET_GMS := true
 $(call inherit-product-if-exists, vendor/gapps/gapps.mk)
 $(call inherit-product-if-exists, vendor/pixelstyle/config.mk)
 $(call inherit-product-if-exists, vendor/apps/GoogleCamera/config.mk)
