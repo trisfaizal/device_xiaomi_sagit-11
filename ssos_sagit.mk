@@ -40,7 +40,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 USE_PIXEL_CHARGING := true
 
 PRODUCT_PRODUCT_PROPERTIES += \
-  ro.ssos.cpu=msm8998
+  ro.ssos.cpu=SDM835
 
 # Gapps
 USE_GAPPS := true
