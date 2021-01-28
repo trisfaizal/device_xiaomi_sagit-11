@@ -21,23 +21,31 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from sagit device
 $(call inherit-product, device/xiaomi/sagit/device.mk)
 
-# Inherit some common NAD stuff.
-$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
+# Inherit some common ShapeShiftOS stuff.
+$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
 
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/apps/MiuiCamera/config.mk)
 
-PRODUCT_NAME := nad_sagit
+PRODUCT_NAME := ssos_sagit
 PRODUCT_DEVICE := sagit
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 6
 PRODUCT_MANUFACTURER := Xiaomi
 
-NAD_BUILD_TYPE := OFFICIAL
-
+# Inherit ShapeShiftOS Official build stuff.
+SSOS_BUILD_TYPE := UNOFFICIAL
+TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_BOOT_ANIMATION_RES := 1080
 USE_PIXEL_CHARGING := true
-TARGET_FACE_UNLOCK := true
+
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.ssos.cpu=msm8998
+
+# Gapps
+USE_GAPPS := true
+IS_PHONE := true
+TARGET_GAPPS_ARCH := arm64
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
